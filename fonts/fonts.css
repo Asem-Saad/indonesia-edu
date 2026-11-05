@@ -1,0 +1,8 @@
+/* Baloo 2 (SIL Open Font License), Latin subset — bundled so the app works offline */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(baloo-latin.woff2) format('woff2');
+}
