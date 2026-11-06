@@ -298,3 +298,5 @@ table.stats td,table.stats th{border-bottom:2px solid #eee;padding:8px;text-alig
 .flip .b::before,.flip .b::after{content:'';margin:auto}
 .btn[disabled]{opacity:.5;cursor:default}
 .rmap .pt circle.pulse{pointer-events:none}
+/* credit line on every page */
+.credit{text-align:center;color:var(--muted);font-size:.9rem;padding:22px 16px calc(22px + env(safe-area-inset-bottom,0px));max-width:1000px;margin:0 auto;border-top:2px dashed #e6dcc4}
