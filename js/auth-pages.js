@@ -56,7 +56,7 @@ function signupPage(role) {
       <p class="note">${teacher ? 'Setelah akun dibuat, admin akan memeriksa dan menyetujuinya. Setelah itu Anda bisa membuat kelas dan memantau hasil murid.' : 'Satu akun orang tua cukup untuk semua anak. Setelah akun dibuat, tambahkan anak-anak Anda.'}</p>
       ${field('f-name', teacher ? 'Nama lengkap' : 'Nama lengkap orang tua', 'autocomplete="name" placeholder="contoh: Ahmad Setiawan"')}
       ${teacher ? field('f-school', 'Nama sekolah', 'placeholder="contoh: SMP Negeri 1 Bandung"')
-                : field('f-phone', 'Nomor HP', 'type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx"')}
+                : field('f-phone', 'Nomor HP', 'type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx atau +kode negara"', 'Nomor Indonesia (08…) atau nomor luar negeri dengan kode negara, misalnya +20…')}
       ${field('f-email', 'Email', 'type="email" autocomplete="email" placeholder="nama@contoh.com"')}
       <div class="row2">
         ${field('f-pass', 'Kata sandi', 'type="password" autocomplete="new-password"', 'minimal 8 karakter')}
@@ -77,7 +77,7 @@ function signupPage(role) {
     if (!name) errs.name = 'Tulis nama lengkap';
     else if (!isFullName(name)) errs.name = 'Tulis nama dengan huruf saja';
     if (teacher) { if (!school) errs.school = 'Tulis nama sekolah'; else if (!isSchool(school)) errs.school = 'Tulis nama sekolah dengan benar'; }
-    else if (!isIdPhone(phone)) errs.phone = 'Nomor HP Indonesia diawali 08 (atau +62) dan berisi 10–13 angka';
+    else if (!isPhone(phone)) errs.phone = 'Tulis nomor HP Indonesia (08…, 10–13 angka) atau nomor luar negeri dengan kode negara (misalnya +20…)';
     if (!isEmail(email)) errs.email = 'Email tidak benar — contoh: nama@contoh.com';
     if (pass.length < 8) errs.pass = 'Kata sandi minimal 8 karakter';
     else if ($('#f-pass2').value !== pass) errs.pass2 = 'Kedua kata sandi tidak sama';

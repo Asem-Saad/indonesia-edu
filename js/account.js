@@ -103,5 +103,6 @@ function normPhone(s) {
   if (d.startsWith('+62')) d = '0' + d.slice(3); else if (d.startsWith('62')) d = '0' + d.slice(2);
   return d;
 }
-const isIdPhone = d => /^08\d{8,11}$/.test(d);
+/* Indonesian mobile (08…, 10–13 digits) or any international number with a country code (+20…, +60…; 8–15 digits) */
+const isPhone = d => /^08\d{8,11}$/.test(d) || /^\+[1-9]\d{7,14}$/.test(d);
 const GRADES = ['Kelas 7', 'Kelas 8', 'Kelas 9', 'Kelas 10', 'Kelas 11', 'Kelas 12', 'Lainnya'];
