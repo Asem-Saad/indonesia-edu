@@ -300,3 +300,7 @@ table.stats td,table.stats th{border-bottom:2px solid #eee;padding:8px;text-alig
 .rmap .pt circle.pulse{pointer-events:none}
 /* credit line on every page */
 .credit{text-align:center;color:var(--muted);font-size:.9rem;padding:22px 16px calc(22px + env(safe-area-inset-bottom,0px));max-width:1000px;margin:0 auto;border-top:2px dashed #e6dcc4}
+/* footer always at the bottom: the page is a column, the main area takes the free space */
+body{display:flex;flex-direction:column;min-height:100vh;min-height:100dvh}
+main{flex:1 0 auto;width:100%}
+.credit{flex:none;width:100%}
